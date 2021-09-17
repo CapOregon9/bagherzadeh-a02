@@ -1,8 +1,11 @@
 package solution;
 
-public class Solution16 {
-    
-    public static void main(String[] args) {
+import java.util.Scanner;
 
+public class Solution16 {
+    public static void main(String[] args) {
+        Legality lg = new Legality();
+        lg.setAge();
+        System.out.println(lg);
     }
 }
