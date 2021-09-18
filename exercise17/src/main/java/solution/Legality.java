@@ -13,8 +13,9 @@ public class Legality {
     private double weight;
     private int hoursSinceDrinking;
     private double bacLevel;
-    private static final double bac = 0.08;
+    private static final double BAC = 0.08;
     private static final Scanner in = new Scanner(System.in);
+    private static final String FORMAT = " is a non-numeric value.";
 
     public void setGender() {
         System.out.println("Enter a 1 if you are male or a 2 if you are female: ");
@@ -22,7 +23,7 @@ public class Legality {
         try {
             gender = Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            System.out.println(input + " is a non-numeric value.");
+            System.out.println(input + FORMAT);
         }
     }
 
@@ -32,7 +33,7 @@ public class Legality {
         try {
             amountOfAlcohol = Double.parseDouble(input);
         } catch (NumberFormatException e) {
-            System.out.println(input + " is a non-numeric value.");
+            System.out.println(input + FORMAT);
         }
     }
 
@@ -42,7 +43,7 @@ public class Legality {
         try {
             weight = Double.parseDouble(input);
         } catch (NumberFormatException e) {
-            System.out.println(input + " is a non-numeric value.");
+            System.out.println(input + FORMAT);
         }
     }
 
@@ -52,7 +53,7 @@ public class Legality {
         try {
             hoursSinceDrinking = Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            System.out.println(input + " is a non-numeric value.");
+            System.out.println(input + FORMAT);
         }
     }
 
@@ -71,7 +72,7 @@ public class Legality {
     }
 
     public String checkLegality() {
-        return (bacLevel >= bac) ? "It is not legal for you to drive." : "It is legal for you to drive.";
+        return (bacLevel >= BAC) ? "It is not legal for you to drive." : "It is legal for you to drive.";
     }
 
     @Override

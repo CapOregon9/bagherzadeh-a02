@@ -5,8 +5,6 @@
 
 package solution;
 
-import java.util.Scanner;
-
 public class Solution16 {
     public static void main(String[] args) {
         Legality lg = new Legality();

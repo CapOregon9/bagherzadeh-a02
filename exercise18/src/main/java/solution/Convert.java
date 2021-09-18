@@ -21,7 +21,6 @@ public class Convert {
         if (convertState.equals("C") || convertState.equals("c")) {
             System.out.println("Please enter the temperature in Fahrenheit: ");
             temp = in.nextDouble();
-            return;
         }
         else if (convertState.equals("F") || convertState.equals("f")) {
             System.out.println("Please enter the temperature in Celsius: ");
