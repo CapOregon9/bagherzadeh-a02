@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 2 Solution
+ *  Copyright 2021 Alexander Bagherzadeh
+ */
+
 package solution;
 
 import java.util.Scanner;
@@ -53,20 +58,26 @@ public class Legality {
 
     public String setBacLevel() {
         if (gender == 1) {
-            bacLevel = ((amountOfAlcohol * 5.14) / (weight * 0.73)) - (0.015 * hoursSinceDrinking);
-            return ("Your BAC is " + bacLevel);
+            bacLevel = (amountOfAlcohol * (5.14 / weight) * 0.73) - (0.015 * hoursSinceDrinking);
+            return String.format("Your BAC is %.6f", bacLevel);
         }
         else if (gender == 2) {
-            bacLevel = ((amountOfAlcohol * 5.14) / (weight * 0.66)) - (0.015 * hoursSinceDrinking);
-            return ("Your BAC is " + bacLevel);
+            bacLevel = (amountOfAlcohol * (5.14 / weight) * 0.66) - (0.015 * hoursSinceDrinking);
+            return String.format("Your BAC is %.6f", bacLevel);
         }
         else {
             return "Wrong input for gender.";
         }
     }
 
+    public String checkLegality() {
+        return (bacLevel >= bac) ? "It is not legal for you to drive." : "It is legal for you to drive.";
+    }
+
     @Override
     public String toString() {
-        return (bacLevel >= bac) ? (setBacLevel() + "It ")
+        StringBuilder sb = new StringBuilder();
+        sb.append(setBacLevel()).append(System.getProperty("line.separator")).append(checkLegality());
+        return sb.toString();
     }
 }
