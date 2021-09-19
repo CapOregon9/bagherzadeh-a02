@@ -8,26 +8,25 @@ package solution;
 import java.util.Scanner;
 
 public class Month {
-    private int month;
-    private String output;
+    private int monthInput;
     private static final Scanner in = new Scanner(System.in);
 
     public void setMonth() {
         do {
             try {
                 System.out.println("Please enter the number of the month: ");
-                month = Integer.parseInt(in.nextLine());
-                if (month < 1 || month > 12) {
+                monthInput = Integer.parseInt(in.nextLine());
+                if (monthInput < 1 || monthInput > 12) {
                     System.out.println("Integer out of range. Try again.");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("You entered non-numeric data. Try Again.");
             }
-        } while (month < 1 || month > 12);
+        } while (monthInput < 1 || monthInput > 12);
     }
 
     public String calcMonth() {
-        switch (month) {
+        switch (monthInput) {
             case 1:
                 return "January";
             case 2:
